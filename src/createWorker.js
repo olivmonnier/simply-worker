@@ -1,8 +1,8 @@
 export const  createWorker = response => {
   const URL = window.URL || window.webkitURL
-  const blob = new Blob([response], { type: 'application/javascript' }) // eslint-disable-line
+  const blob = new Blob([response], { type: 'application/javascript' })
   const objectURL = URL.createObjectURL(blob)
-  const worker = new Worker(objectURL) // eslint-disable-line
+  const worker = new Worker(objectURL)
   worker.post = message =>
     new Promise((resolve, reject) => {
       worker.onmessage = event => {

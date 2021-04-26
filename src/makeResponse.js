@@ -1,4 +1,5 @@
-export const makeResponse = work => `
+export const makeResponse = (work, dependencies) => `
+  ${declareDependencies(dependencies)}
   const isPromise = (promise) => !!promise && typeof promise.then === 'function'
   self.onmessage = event => {
     const args = event.data.message.args
@@ -14,3 +15,8 @@ export const makeResponse = work => `
     }
   }
 `
+function declareDependencies(dependencies) {
+  return Object.keys(dependencies)
+    .map(dep => `let ${dep} = ${typeof dependencies[dep] === 'string' ? '\'' + dependencies[dep] + '\'' : dependencies[dep] };`)
+    .join('')
+}

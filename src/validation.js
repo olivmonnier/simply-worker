@@ -35,7 +35,7 @@ const isValidArg = arg => type => {
     if (type === 'array') return true
     return testArray[type](arg)
   }
-  if (arg) return typeof arg === type.toString() // eslint-disable-line
+  if (arg) return typeof arg === type.toString()
   return false
 }
 

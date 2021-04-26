@@ -27,6 +27,15 @@
     const asyncSumWorker = functionWorker(asyncSum);
 
     asyncSumWorker(3, 4).then(res => console.log(res))
+
+    // Example with dependencies
+    const log = (b) => console.log(foo, a, test(), b);
+    const logWorker = functionWorker(log, {
+      foo: 'bar',
+      a: true,
+      test: () => 123
+    });
+    logWorker('Hello World')
   </script>
 </body>
 </html>

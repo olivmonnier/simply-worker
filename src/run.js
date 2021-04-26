@@ -3,11 +3,11 @@ import { makeResponse } from './makeResponse.js';
 import { isValid } from './validation.js';
 import { argumentError } from './utils.js';
 
-export const run = (work = null, args) => {
+export const run = (work = null, args, dependencies) => {
   const validWork = isValid(work)('function')
   const validArgs = isValid(args)(['array', 'undefined'])
   if (validWork && validArgs) {
-    const worker = createWorker(makeResponse(work))
+    const worker = createWorker(makeResponse(work, dependencies))
     return worker.post({ args })
   }
   if (!validWork) console.error(argumentError({ expected: 'a function', received: work }))

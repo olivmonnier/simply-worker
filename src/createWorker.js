@@ -1,4 +1,4 @@
-export const  createWorker = response => {
+export const createWorker = response => {
   const URL = window.URL || window.webkitURL
   const blob = new Blob([response], { type: 'application/javascript' })
   const objectURL = URL.createObjectURL(blob)

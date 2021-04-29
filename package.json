@@ -1,11 +1,22 @@
 {
   "name": "function-worker",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Wrap your function simply in web worker",
+  "repository": "https://github.com/olivmonnier/function-worker",
+  "main": "dist/function-worker.cjs.js",
+  "module": "dist/function-worker.esm.js",
+  "browser": "dist/function-worker.umd.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rollup -c",
+    "dev": "rollup -c -w"
   },
   "author": "",
-  "license": "ISC"
+  "license": "MIT",
+  "devDependencies": {
+    "rollup": "^2.46.0",
+    "rollup-plugin-terser": "^7.0.2"
+  },
+  "files": [
+    "dist"
+  ]
 }

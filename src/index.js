@@ -1,6 +1,12 @@
 import { run } from './run.js';
 
-export default function(work, dependencies = {}) {
+/**
+ * 
+ * @param {Function} work 
+ * @param {Object} dependencies 
+ * @returns Function
+ */
+export default function functionWorker(work, dependencies = {}) {
   const handler = {
     apply: function(target, thisArg, argumentsList) {
       return run(target, argumentsList, dependencies)

@@ -1,5 +1,9 @@
 # function-worker
 Wrap your function simply in web worker
+- 867 bytes gzipped
+- No dependencies
+- No worker file to declare
+- Works with promise function
 
 ## Installation
 ```
@@ -11,7 +15,6 @@ npm install function-worker
 |-|-|-|
 |fn|Function|Function to encapsulate in web worker
 |dependencies|Object|All functions/parameters could be used in your function
-
 
 ## Examples
 ```js

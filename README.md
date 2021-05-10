@@ -1,5 +1,5 @@
 # function-worker
-Wrap your function simply in web worker
+Wrap your function simply in web worker. It use proxy to transform your function and avoid `postMessage` and `onmessage` methods.
 - 867 bytes gzipped
 - No dependencies
 - No worker file to declare

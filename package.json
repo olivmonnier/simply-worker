@@ -1,11 +1,11 @@
 {
-  "name": "function-worker",
+  "name": "simply-worker",
   "version": "1.0.0",
   "description": "Wrap your function simply in web worker",
-  "repository": "https://github.com/olivmonnier/function-worker",
-  "main": "dist/function-worker.cjs.js",
-  "module": "dist/function-worker.esm.js",
-  "browser": "dist/function-worker.umd.js",
+  "repository": "https://github.com/olivmonnier/simply-worker",
+  "main": "dist/simply-worker.cjs.js",
+  "module": "dist/simply-worker.esm.js",
+  "browser": "dist/simply-worker.umd.js",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w"

@@ -1,4 +1,4 @@
-# function-worker
+# simply-worker
 Wrap your function simply in web worker. It use proxy to transform your function and avoid `postMessage` and `onmessage` methods.
 - 867 bytes gzipped
 - No dependencies
@@ -7,7 +7,7 @@ Wrap your function simply in web worker. It use proxy to transform your function
 
 ## Installation
 ```
-npm install function-worker
+npm install simply-worker
 ```
 
 ## Arguments
@@ -18,11 +18,11 @@ npm install function-worker
 
 ## Examples
 ```js
-import functionWorker from 'function-worker';
+import simplyWorker from 'simply-worker';
 
 // Example with basic function
 const sum = (a, b) => a + b;
-const sumWorker = functionWorker(sum);
+const sumWorker = simplyWorker(sum);
 
 sumWorker(1, 4).then(res => console.log(res));
 
@@ -34,13 +34,13 @@ const asyncSum = (a, b) => {
     }, 1000)
   });
 }
-const asyncSumWorker = functionWorker(asyncSum);
+const asyncSumWorker = simplyWorker(asyncSum);
 
 asyncSumWorker(3, 4).then(res => console.log(res))
 
 // Example with dependencies
 const log = (b) => console.log(foo, a, test(), b);
-const logWorker = functionWorker(log, {
+const logWorker = simplyWorker(log, {
   foo: 'bar',
   a: true,
   test: () => 123

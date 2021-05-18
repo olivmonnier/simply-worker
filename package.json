@@ -3,14 +3,25 @@
   "version": "1.0.0",
   "description": "Wrap your function simply in web worker",
   "repository": "https://github.com/olivmonnier/simply-worker",
+  "keywords": [
+    "webworker",
+    "proxy",
+    "simple",
+    "function"
+  ],
   "main": "dist/simply-worker.cjs.js",
   "module": "dist/simply-worker.esm.js",
   "browser": "dist/simply-worker.umd.js",
+  "exports": {
+    "require": "dist/simply-worker.cjs.js",
+    "import": "dist/simply-worker.esm.js",
+    "default": "dist/simply-worker.esm.js"
+  },
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w"
   },
-  "author": "",
+  "author": "oliv75",
   "license": "MIT",
   "devDependencies": {
     "rollup": "^2.46.0",
